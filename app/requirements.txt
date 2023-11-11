@@ -1,6 +1,10 @@
 Flask==3.0.0
 Flask-SQLAlchemy==3.1.1
+SQLAlchemy-Utils==0.41.1
 Flask-RESTful==0.3.10
 Flask-Migrate==4.0.5
-Flask-Script==2.0.6
+marshmallow==3.20.1
+flask-marshmallow==0.15.0
+marshmallow-sqlalchemy==0.29.0
 psycopg2==2.9.9
+pytest

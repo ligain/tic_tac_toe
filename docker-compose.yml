@@ -6,7 +6,8 @@ services:
     container_name: app-flask
     restart: always
     depends_on:
-      - db
+      db:
+        condition: service_started
     links:
       - db
     volumes:

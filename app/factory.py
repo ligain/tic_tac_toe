@@ -2,9 +2,13 @@ import os
 
 from flask import Flask
 
-def create_app():
+def create_app(config: str = None):
     app = Flask(__name__)
-    app.config.from_object(os.getenv('APP_SETTINGS'))
+
+    if not config:
+        config = os.getenv('APP_SETTINGS')
+
+    app.config.from_object(config)
 
     from models import db
     db.init_app(app)
