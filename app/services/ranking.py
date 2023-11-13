@@ -1,4 +1,5 @@
 from models import Ranking, db, Game
+from schemas import ranking_schema
 
 
 class RankingService:
@@ -8,12 +9,12 @@ class RankingService:
         ranking = Ranking(game_id=game_id)
         db.session.add(ranking)
         db.session.commit()
-        return ranking
+        return ranking_schema.dump(ranking)
 
     @staticmethod
-    def set_winner(game_id: int, winer_id: int):
+    def set_winner(game_id: int, winner_id: int):
         ranking = Ranking.query.filter_by(game_id=game_id).first()
         if ranking:
-            ranking.winner_id = winer_id
+            ranking.winner_id = winner_id
             db.session.add(ranking)
             db.session.commit()

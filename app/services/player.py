@@ -20,12 +20,12 @@ class PlayerService:
 
     @staticmethod
     def get_player_by_id(player_id: int) -> dict:
-        player = db.get_or_404(Player, player_id, description='Object with specified id was not found')
+        player = db.get_or_404(Player, player_id, description='Player with specified id was not found')
         return player_schema.dump(player)
 
     @classmethod
     def delete_player_by_id(cls, player_id: int) -> int:
-        player = db.get_or_404(Player, player_id, description='Object with specified id was not found')
+        player = db.get_or_404(Player, player_id, description='Player with specified id was not found')
         db.session.delete(player)
         db.session.commit()
         return player_id

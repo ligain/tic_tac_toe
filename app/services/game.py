@@ -108,12 +108,13 @@ class GameService:
 
     @staticmethod
     def change_board(board: list, position: int, symbol: str) -> list[str]:
-        """Makes a turn on the board"""
+        """Updates value on the board"""
         board[position] = symbol
         return board
 
     @classmethod
     def make_turn(cls, game_id: int, player_id: int, position: int):
+        """Makes a turn on the board"""
         winner_response = {}
         game_data = cls.get_game_by_id(game_id=game_id)
         player_symbol = cls.find_player_symbol(game_data=game_data, player_id=player_id)
@@ -121,7 +122,7 @@ class GameService:
         game_data['board'] = updated_board
         winner_id = cls.define_winner(game_data=game_data)
         if winner_id:
-            RankingService.set_winner(game_id=game_id, winer_id=winner_id)
+            RankingService.set_winner(game_id=game_id, winner_id=winner_id)
             winner_response = {'winner_id': winner_id}
         game_obj = game_full_schema.load(game_data, session=db.session)
         db.session.add(game_obj)

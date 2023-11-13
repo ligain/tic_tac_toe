@@ -1,6 +1,6 @@
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema, SQLAlchemySchema, auto_field
 
-from models import Player, Game
+from models import Player, Game, Ranking
 
 
 class PlayerSchema(SQLAlchemyAutoSchema):
@@ -29,6 +29,13 @@ class GameFullSchema(SQLAlchemyAutoSchema):
         include_fk = True
 
 
+class RankingSchema(SQLAlchemyAutoSchema):
+    class Meta:
+        model = Ranking
+        load_instance = True
+
+
 player_schema = PlayerSchema()
 game_schema = GameSchema()
 game_full_schema = GameFullSchema()
+ranking_schema = RankingSchema()
