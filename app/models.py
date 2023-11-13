@@ -2,7 +2,7 @@ from sqlalchemy import Integer, String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.dialects.postgresql import ARRAY
-from sqlalchemy_utils import ScalarListType, ChoiceType
+from sqlalchemy_utils import ChoiceType
 
 from constants import X_SYMBOL, O_SYMBOL
 

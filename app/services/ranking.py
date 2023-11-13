@@ -1,4 +1,4 @@
-from models import Ranking, db, Game
+from models import Ranking, db
 from schemas import ranking_schema
 
 
