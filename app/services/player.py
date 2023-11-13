@@ -11,12 +11,12 @@ class PlayerService:
         if not fields:
             return {"message": "No input data provided"}, 400
         try:
-            data = player_schema.load(fields, session=db.session)
+            player_data = player_schema.load(fields, session=db.session)
         except ValidationError as err:
             return err.messages, 422
-        db.session.add(data)
+        db.session.add(player_data)
         db.session.commit()
-        return player_schema.dump(data)
+        return player_schema.dump(player_data)
 
     @staticmethod
     def get_player_by_id(player_id: int) -> dict:

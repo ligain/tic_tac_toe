@@ -1,6 +1,12 @@
 # Tic-Tac-Toe game
 
-Simple Flask API for Tic-Tac-Toe game.
+Flask API for Tic-Tac-Toe game.
+
+| x | o | x |
+|--|--|--|
+| x | o | |
+|  | o |  |
+
 
 # Installation
 

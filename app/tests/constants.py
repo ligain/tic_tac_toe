@@ -13,3 +13,16 @@ PLAYER_PAYLOAD_3 = {
     "email": "robert@example.com",
     "age": 33
 }
+EXPECTED_EMPTY_BOARD = '''
+  |   |  
+----------
+  |   |  
+----------
+  |   |  '''
+
+EXPECTED_FULL_BOARD = '''
+o | o | o
+----------
+x | x | x
+----------
+o |   | o'''
